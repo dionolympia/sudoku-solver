@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="sudoku.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"
+            rel="stylesheet"
+        />
+        <script defer src="sudoku.js"></script>
+    </head>
+    <body>
+        <h1>Sudoku Solver</h1>
+
+        <div class="ui-btns-container">
+            <button class="ui-btn" id="new-game">New Game</button>
+            <button class="ui-btn" id="check">Check</button>
+            <button class="ui-btn" id="solve">Solve</button>
+        </div>
+
+        <div id="confirm-new-game">
+            <span>Are you sure you want a new game?</span>
+            <button id="yes-new-game">Yes</button>
+            <button id="no-new-game">No</button>
+        </div>
+
+        <div id="confirm-solve">
+            <span>Are you sure you want to auto-solve?</span>
+            <button id="yes-solve">Yes</button>
+            <button id="no-solve">No</button>
+        </div>
+
+        <table id="board">
+            <tr>
+                <td id="test" class="box" contenteditable></td>
+                <td class="box" contenteditable></td>
+                <td class="box right-border" contenteditable></td>
+                <td class="box" contenteditable></td>
+                <td class="box" contenteditable></td>
+                <td class="box right-border" contenteditable></td>
+                <td class="box" contenteditable></td>
+                <td class="box" contenteditable></td>
+                <td class="box" contenteditable></td>
+            </tr>
+            <tr>
+                <td id="test" class="box" contenteditable></td>
+                <td class="box" contenteditable></td>
+                <td class="box right-border" contenteditable></td>
+                <td class="box" contenteditable></td>
+                <td class="box" contenteditable></td>
+                <td class="box right-border" contenteditable></td>
+                <td class="box" contenteditable></td>
+                <td class="box" contenteditable></td>
+                <td class="box" contenteditable></td>
+            </tr>
+            <tr>
+                <td
+                    id="test"
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box right-border bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box right-border bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+            </tr>
+            <tr>
+                <td
+                    id="test"
+                    class="box"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td
+                    class="box right-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td
+                    class="box right-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+            </tr>
+            <tr>
+                <td
+                    id="test"
+                    class="box"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td
+                    class="box right-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td
+                    class="box right-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+            </tr>
+            <tr>
+                <td
+                    id="test"
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box right-border bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box right-border bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+            </tr>
+            <tr>
+                <td
+                    id="test"
+                    class="box"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td
+                    class="box right-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td
+                    class="box right-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+            </tr>
+            <tr>
+                <td
+                    id="test"
+                    class="box"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td
+                    class="box right-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td
+                    class="box right-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+                <td class="box" data-cell-index="" contenteditable></td>
+            </tr>
+            <tr>
+                <td
+                    id="test"
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box right-border bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box right-border bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+                <td
+                    class="box bottom-border"
+                    data-cell-index=""
+                    contenteditable
+                ></td>
+            </tr>
+        </table>
+    </body>
+</html>

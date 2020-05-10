@@ -1,0 +1,118 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+}
+
+#board {
+    margin: 50px 25px 25px 25px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    border: 5px solid black;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    transition: 0.1s ease-in all;
+    overflow: hidden;
+}
+
+.box:focus {
+    outline: none;
+    background-color: rgb(197, 223, 251);
+}
+.ui-btns-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.ui-btn {
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 60px;
+    margin: 5px;
+    padding: 5px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(197, 223, 251);
+    transition: 0.1s ease-in all;
+}
+
+.ui-btn:hover {
+    background-color: rgb(149, 195, 248);
+}
+
+button:focus {
+    outline: none;
+}
+
+.bottom-border {
+    border-bottom: 5px solid black;
+}
+
+.right-border {
+    border-right: 5px solid black;
+}
+
+.ellipsis {
+    max-width: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#confirm-new-game {
+    display: none;
+    height: 0;
+}
+
+#confirm-solve {
+    display: none;
+    height: 0;
+}
+
+@media screen and (max-width: 700px) {
+    td {
+        border: 1px solid black;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .box {
+        width: 25px;
+        height: 25px;
+        transition: 0.1s ease-in all;
+    }
+
+    .ellipsis {
+        max-width: 25px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
