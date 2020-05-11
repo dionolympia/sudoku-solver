@@ -21,282 +21,32 @@
         </div>
 
         <div id="confirm-new-game">
-            <span>Are you sure you want a new game?</span>
+            <span><b>Are you sure you want a new game?</b></span>
             <button id="yes-new-game">Yes</button>
             <button id="no-new-game">No</button>
         </div>
 
         <div id="confirm-solve">
-            <span>Are you sure you want to auto-solve?</span>
+            <span><b>Are you sure you want to auto-solve?</b></span>
             <button id="yes-solve">Yes</button>
             <button id="no-solve">No</button>
         </div>
 
+        <div></div>
+
         <table id="board"></table>
 
-        <!-- <table id="board">
-            <tr>
-                <td id="test" class="box" contenteditable></td>
-                <td class="box" contenteditable></td>
-                <td class="box right-border" contenteditable></td>
-                <td class="box" contenteditable></td>
-                <td class="box" contenteditable></td>
-                <td class="box right-border" contenteditable></td>
-                <td class="box" contenteditable></td>
-                <td class="box" contenteditable></td>
-                <td class="box" contenteditable></td>
-            </tr>
-            <tr>
-                <td id="test" class="box" contenteditable></td>
-                <td class="box" contenteditable></td>
-                <td class="box right-border" contenteditable></td>
-                <td class="box" contenteditable></td>
-                <td class="box" contenteditable></td>
-                <td class="box right-border" contenteditable></td>
-                <td class="box" contenteditable></td>
-                <td class="box" contenteditable></td>
-                <td class="box" contenteditable></td>
-            </tr>
-            <tr>
-                <td
-                    id="test"
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box right-border bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box right-border bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-            </tr>
-            <tr>
-                <td
-                    id="test"
-                    class="box"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td
-                    class="box right-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td
-                    class="box right-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-            </tr>
-            <tr>
-                <td
-                    id="test"
-                    class="box"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td
-                    class="box right-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td
-                    class="box right-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-            </tr>
-            <tr>
-                <td
-                    id="test"
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box right-border bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box right-border bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-            </tr>
-            <tr>
-                <td
-                    id="test"
-                    class="box"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td
-                    class="box right-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td
-                    class="box right-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-            </tr>
-            <tr>
-                <td
-                    id="test"
-                    class="box"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td
-                    class="box right-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td
-                    class="box right-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-                <td class="box" data-cell-index="" contenteditable></td>
-            </tr>
-            <tr>
-                <td
-                    id="test"
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box right-border bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box right-border bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-                <td
-                    class="box bottom-border"
-                    data-cell-index=""
-                    contenteditable
-                ></td>
-            </tr>
-        </table> -->
+        <div class="loader-container">
+            <div class="loader-circle"></div>
+        </div>
+        <div>
+            <b>Made by: </b
+            ><a
+                id="dion-olympia"
+                target="_blank"
+                href="http://www.dionolympia.com"
+                >Dion Olympia</a
+            >
+        </div>
     </body>
 </html>
