@@ -38,8 +38,8 @@ td {
 
 .box:focus {
     outline: none;
-    background-color: rgb(197, 223, 251);
 }
+
 .ui-btns-container {
     display: flex;
     flex-direction: row;
@@ -66,7 +66,7 @@ td {
     background-color: rgb(149, 195, 248);
 }
 
-button:focus {
+.ui-btn:focus {
     outline: none;
 }
 
@@ -76,13 +76,6 @@ button:focus {
 
 .right-border {
     border-right: 5px solid black;
-}
-
-.ellipsis {
-    max-width: 50px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
 }
 
 #confirm-new-game {
@@ -107,12 +100,5 @@ button:focus {
         width: 25px;
         height: 25px;
         transition: 0.1s ease-in all;
-    }
-
-    .ellipsis {
-        max-width: 25px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
     }
 }
