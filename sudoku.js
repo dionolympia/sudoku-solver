@@ -37,7 +37,7 @@ function processData(allText, isRestart) {
             lines.push(puzzle);
         }
     }
-    let random = Math.floor(Math.random() * (249999 + 1));
+    let random = Math.floor(Math.random() * (49999 + 1));
     picked = lines[random];
     console.log(picked);
     loaded();
