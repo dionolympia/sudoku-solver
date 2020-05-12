@@ -37,7 +37,7 @@ function processData(allText, isRestart) {
             lines.push(puzzle);
         }
     }
-    let random = Math.floor(Math.random() * (9999 + 1));
+    let random = Math.floor(Math.random() * (24998 + 1));
     picked = lines[random];
     loaded();
     createBoard(isRestart, false);
