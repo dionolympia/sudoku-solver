@@ -39,13 +39,11 @@ function processData(allText, isRestart) {
     }
     let random = Math.floor(Math.random() * (9999 + 1));
     picked = lines[random];
-    console.log(picked);
     loaded();
     createBoard(isRestart, false);
 }
 
 function loaded() {
-    console.log("loaded");
     let loading = document.getElementsByClassName("loader-container")[0];
     loading.style.display = "none";
     let board = document.getElementById("board");
@@ -79,14 +77,12 @@ function createBoard(isRestart, isSolve) {
         let row = Math.floor(number / 9);
         let col = number - row * 9;
         solvedBoardMatrix[row][col] = solved[number];
-        console.log(solvedBoardMatrix);
     }
 
     for (number in unsolved) {
         let row = Math.floor(number / 9);
         let col = number - row * 9;
         unsolvedBoardMatrix[row][col] = unsolved[number];
-        console.log(unsolvedBoardMatrix);
     }
 
     let board = document.getElementById("board");
@@ -273,12 +269,10 @@ let confirmSolve = document.getElementById("confirm-solve");
 
 // New Game Button
 newGame.addEventListener("click", () => {
-    console.log("new game");
     confirmNewGame.style.display = "block";
     confirmSolve.style.display = "none";
 });
 yesNewGame.addEventListener("click", () => {
-    console.log("changed to new game");
     let board = document.getElementById("board");
     let loading = document.getElementsByClassName("loader-container")[0];
     board.style.display = "none";
@@ -292,7 +286,6 @@ noNewGame.addEventListener("click", () => {
 
 // Check button
 check.addEventListener("click", () => {
-    console.log("checking...");
     if (checkBoard()) {
         console.log("The current board is correct.");
     } else {
@@ -302,13 +295,10 @@ check.addEventListener("click", () => {
 
 // Solve button
 solve.addEventListener("click", () => {
-    console.log("solve");
     confirmSolve.style.display = "block";
     confirmNewGame.style.display = "none";
 });
 yesSolve.addEventListener("click", () => {
-    console.log("solved the current game");
-    console.log({ picked });
     createBoard(false, true);
     confirmSolve.style.display = "none";
 });
