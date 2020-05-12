@@ -104,21 +104,23 @@ function createBoard(isRestart, isSolve) {
         // Create the data cells
         for (col in currentBoard[row]) {
             let td = document.createElement("td");
-            let att = document.createAttribute("class");
-            att.value = "box";
+            let classes = document.createAttribute("class");
+            let inputMode = document.createAttribute("inputmode");
+            classes.value = "box";
+            inputMode.value = "decimal";
 
             // Add vertical dividers
             if (col == 2 || col == 5) {
-                att.value = att.value + " " + "right-border";
+                classes.value = classes.value + " " + "right-border";
             }
 
             // Add horizontal dividers
             if (row == 2 || row == 5) {
-                att.value = att.value + " " + "bottom-border";
+                classes.value = classes.value + " " + "bottom-border";
             }
 
             // Add the attributes/properties for the row
-            td.setAttributeNode(att);
+            td.setAttributeNode(classes);
 
             // Add text to data cell
             let text;
@@ -134,6 +136,7 @@ function createBoard(isRestart, isSolve) {
                     text = document.createTextNode(solvedBoardMatrix[row][col]);
                 } else text = document.createTextNode("");
                 td.contentEditable = "true";
+                td.setAttributeNode(inputMode);
             }
 
             td.appendChild(text);
