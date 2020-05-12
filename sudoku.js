@@ -37,7 +37,7 @@ function processData(allText, isRestart) {
             lines.push(puzzle);
         }
     }
-    let random = Math.floor(Math.random() * (99999 + 1));
+    let random = Math.floor(Math.random() * (49999 + 1));
     picked = lines[random];
     loaded();
     createBoard(isRestart, false);
@@ -286,11 +286,12 @@ noNewGame.addEventListener("click", () => {
 
 // Check button
 check.addEventListener("click", () => {
-    if (checkBoard()) {
-        console.log("The current board is correct.");
-    } else {
-        console.log("The current board is not possible.");
-    }
+    // if (checkBoard()) {
+    //     console.log("The current board is correct.");
+    // } else {
+    //     console.log("The current board is not possible.");
+    // }
+    alert("Work in Progress");
 });
 
 // Solve button
