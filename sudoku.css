@@ -171,3 +171,13 @@ td {
     font-weight: bold;
     color: rgb(149, 195, 248);
 }
+
+.yes-no {
+    display: flex;
+    justify-content: space-around;
+}
+
+.yes,
+.no {
+    padding: 5px 10px;
+}
