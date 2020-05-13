@@ -1,15 +1,18 @@
 /* Importing Sudoku boards data */
 let picked;
 
+// Start the game when DOM's loaded
 document.addEventListener("DOMContentLoaded", function (event) {
     startGame(false);
 });
 
+// Starting function
 function startGame(isRestart) {
     let file = "sudoku.csv";
     readTextFile(file, isRestart);
 }
 
+// Reading the csv file
 function readTextFile(file, isRestart) {
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, true);
@@ -24,6 +27,7 @@ function readTextFile(file, isRestart) {
     rawFile.send(null);
 }
 
+// Process data into lines
 function processData(allText, isRestart) {
     var allTextLines = allText.split(/\r\n|\n/);
     var headers = allTextLines[0].split(",");
@@ -39,10 +43,13 @@ function processData(allText, isRestart) {
     }
     let random = Math.floor(Math.random() * (49999 + 1));
     picked = lines[random];
+
+    // Show & create the board after a random line/puzzle is picked
     loaded();
     createBoard(isRestart, false);
 }
 
+// Remove loading bar and show the board
 function loaded() {
     let loading = document.getElementsByClassName("loader-container")[0];
     loading.style.display = "none";
@@ -50,6 +57,7 @@ function loaded() {
     board.style.display = "block";
 }
 
+// Creating a blank board
 function initializeBoard() {
     return {
         board: [
@@ -158,9 +166,6 @@ function createBoard(isRestart, isSolve) {
             document.querySelectorAll(".box").forEach((box) => {
                 let input = box.innerHTML;
 
-                // // Clear colors
-                // box.style.background = "white";
-
                 // Remove any invalid inputs
                 if (input.length > 1 || !input.match(number)) {
                     box.innerHTML = "";
@@ -199,6 +204,7 @@ function createBoard(isRestart, isSolve) {
 
         // When a box is clicked
         item.addEventListener("click", (event) => {
+            console.log(event.target.value);
             // Clear colors
             document.querySelectorAll(".box").forEach((box) => {
                 if (box.contentEditable == "true") {
@@ -289,13 +295,42 @@ noNewGame.addEventListener("click", () => {
 
 // Check button
 check.addEventListener("click", () => {
-    // if (checkBoard()) {
-    //     console.log("The current board is correct.");
-    // } else {
-    //     console.log("The current board is not possible.");
-    // }
-    alert("Work in Progress");
+    let newGame = document.getElementById("confirm-new-game");
+    let solve = document.getElementById("confirm-solve");
+    let checkMsg = document.getElementById("check-msg");
+    let correct = document.getElementById("check-correct");
+    let wrong = document.getElementById("check-wrong");
+    let errorCount = document.getElementById("error-count");
+    let checking = checkBoard();
+
+    hide(newGame);
+    hide(solve);
+
+    show(checkMsg, "flex");
+    if (checking.result) {
+        show(correct, "block");
+    } else {
+        show(wrong, "block");
+        errorCount.innerHTML = checking.errors;
+    }
 });
+
+check.addEventListener("blur", () => {
+    let checkMsg = document.getElementById("check-msg");
+    let correct = document.getElementById("check-correct");
+    let wrong = document.getElementById("check-wrong");
+    hide(checkMsg);
+    hide(correct);
+    hide(wrong);
+});
+
+function show(element, type) {
+    element.style.display = type;
+}
+
+function hide(element) {
+    element.style.display = "none";
+}
 
 // Solve button
 solve.addEventListener("click", () => {
@@ -310,8 +345,42 @@ noSolve.addEventListener("click", () => {
     confirmSolve.style.display = "none";
 });
 
+// Check if the board is correct
 function checkBoard() {
-    return true;
+    let solved = picked.solved;
+    let foundError = false;
+    let board = document.getElementById("board");
+    let rows = board.childNodes;
+    let errorCount = 0;
+
+    // For each row
+    rows.forEach((row, rowIndex) => {
+        let columns = row.childNodes;
+
+        // For each column
+        columns.forEach((box, colIndex) => {
+            let currentVal = box.innerHTML;
+            let solvedIndex = rowIndex * 9 + colIndex;
+
+            // If box is correct
+            if (currentVal == solved[solvedIndex]) {
+                // Color it green (if it's editable)
+                if (box.style.background != "rgb(221, 221, 221)") {
+                    box.style.background = "#88c999";
+                }
+            } else {
+                // Otherwise color it red
+                box.style.background = "rgb(223, 159, 159)";
+
+                // And keep track of the error
+                errorCount += 1;
+                foundError = true;
+            }
+        });
+    });
+
+    if (foundError) return { result: false, errors: errorCount };
+    else return { result: true, errors: errorCount };
 }
 
 /* END of UI Buttons */

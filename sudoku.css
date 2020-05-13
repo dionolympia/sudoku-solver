@@ -7,7 +7,7 @@ body {
 }
 
 #board {
-    margin: 50px 25px 25px 25px;
+    margin: 75px 25px 25px 25px;
     display: none;
 }
 
@@ -52,16 +52,17 @@ td {
 .ui-btn {
     min-width: 100px;
     max-width: 100px;
-    min-height: 60px;
+    min-height: 40px;
     margin: 5px;
     padding: 5px 20px;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
     border-radius: 10px;
     border: none;
     background-color: rgb(197, 223, 251);
     transition: 0.1s ease-in all;
+    white-space: nowrap;
 }
 
 .ui-btn:hover {
@@ -80,11 +81,7 @@ td {
     border-right: 5px solid black;
 }
 
-#confirm-new-game {
-    display: none;
-    height: 0;
-}
-
+#confirm-new-game,
 #confirm-solve {
     display: none;
     height: 0;
@@ -95,6 +92,33 @@ td {
 #yes-solve,
 #no-solve {
     border-radius: 5px;
+}
+
+#dion-olympia {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(149, 195, 248);
+}
+
+.yes-no {
+    display: flex;
+    justify-content: space-around;
+}
+
+.yes,
+.no {
+    padding: 1px 10px;
+}
+
+#check-msg {
+    height: 0;
+    display: none;
+}
+
+#check-correct,
+#check-wrong {
+    display: none;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 600px) {
@@ -129,7 +153,7 @@ td {
 }
 
 .loader-container {
-    margin: 60px 25px 25px 25px;
+    margin: 75px 25px 25px 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,20 +188,4 @@ td {
     100% {
         transform: rotate(360deg);
     }
-}
-
-#dion-olympia {
-    text-decoration: none;
-    font-weight: bold;
-    color: rgb(149, 195, 248);
-}
-
-.yes-no {
-    display: flex;
-    justify-content: space-around;
-}
-
-.yes,
-.no {
-    padding: 5px 10px;
 }
