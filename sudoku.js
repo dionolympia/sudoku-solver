@@ -275,11 +275,13 @@ let solve = document.getElementById("solve");
 let yesSolve = document.getElementById("yes-solve");
 let noSolve = document.getElementById("no-solve");
 let confirmSolve = document.getElementById("confirm-solve");
+let checkMsg = document.getElementById("check-msg");
 
 // New Game Button
 newGame.addEventListener("click", () => {
     confirmNewGame.style.display = "block";
     confirmSolve.style.display = "none";
+    checkMsg.style.display = "none";
 });
 yesNewGame.addEventListener("click", () => {
     let board = document.getElementById("board");
@@ -328,6 +330,7 @@ check.addEventListener("blur", () => {
 solve.addEventListener("click", () => {
     confirmSolve.style.display = "block";
     confirmNewGame.style.display = "none";
+    checkMsg.style.display = "none";
 });
 yesSolve.addEventListener("click", () => {
     createBoard(false, true);
