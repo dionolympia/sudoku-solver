@@ -119,6 +119,7 @@ td {
 #check-wrong {
     display: none;
     font-weight: bold;
+    text-align: center;
 }
 
 @media screen and (max-width: 600px) {

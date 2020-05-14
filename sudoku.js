@@ -303,14 +303,14 @@ check.addEventListener("click", () => {
     let errorCount = document.getElementById("error-count");
     let checking = checkBoard();
 
-    hide(newGame);
-    hide(solve);
+    newGame.style.display = "none";
+    solve.style.display = "none";
+    checkMsg.style.display = "flex";
 
-    show(checkMsg, "flex");
     if (checking.result) {
-        show(correct, "block");
+        correct.style.display = "block";
     } else {
-        show(wrong, "block");
+        wrong.style.display = "block";
         errorCount.innerHTML = checking.errors;
     }
 });
@@ -319,18 +319,10 @@ check.addEventListener("blur", () => {
     let checkMsg = document.getElementById("check-msg");
     let correct = document.getElementById("check-correct");
     let wrong = document.getElementById("check-wrong");
-    hide(checkMsg);
-    hide(correct);
-    hide(wrong);
+    checkMsg.style.display = "none";
+    correct.style.display = "none";
+    wrong.style.display = "none";
 });
-
-function show(element, type) {
-    element.style.display = type;
-}
-
-function hide(element) {
-    element.style.display = "none";
-}
 
 // Solve button
 solve.addEventListener("click", () => {
@@ -365,11 +357,17 @@ function checkBoard() {
             // If box is correct
             if (currentVal == solved[solvedIndex]) {
                 // Color it green (if it's editable)
-                if (box.style.background != "rgb(221, 221, 221)") {
+                if (
+                    box.style.background != "rgb(221, 221, 221)" &&
+                    box.style.background != "rgb(223, 159, 159)"
+                ) {
                     box.style.background = "#88c999";
                 }
+
+                if (box.style.background == "rgb(223, 159, 159)") {
+                    box.style.background = "rgb(221, 221, 221)";
+                }
             } else {
-                // Otherwise color it red
                 box.style.background = "rgb(223, 159, 159)";
 
                 // And keep track of the error
