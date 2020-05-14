@@ -311,8 +311,10 @@ check.addEventListener("click", () => {
 
     if (checking.result) {
         correct.style.display = "block";
+        wrong.style.display = "none";
     } else {
         wrong.style.display = "block";
+        correct.style.display = "none";
         errorCount.innerHTML = checking.errors;
     }
 });
