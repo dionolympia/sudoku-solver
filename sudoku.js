@@ -204,6 +204,8 @@ function createBoard(isRestart, isSolve) {
 
         // When a box is clicked
         item.addEventListener("click", (event) => {
+            checkMsg.style.display = "none";
+
             console.log(event.target.value);
             // Clear colors
             document.querySelectorAll(".box").forEach((box) => {
@@ -276,6 +278,9 @@ let yesSolve = document.getElementById("yes-solve");
 let noSolve = document.getElementById("no-solve");
 let confirmSolve = document.getElementById("confirm-solve");
 let checkMsg = document.getElementById("check-msg");
+let errorCount = document.getElementById("error-count");
+let correct = document.getElementById("check-correct");
+let wrong = document.getElementById("check-wrong");
 
 // New Game Button
 newGame.addEventListener("click", () => {
@@ -297,16 +302,10 @@ noNewGame.addEventListener("click", () => {
 
 // Check button
 check.addEventListener("click", () => {
-    let newGame = document.getElementById("confirm-new-game");
-    let solve = document.getElementById("confirm-solve");
-    let checkMsg = document.getElementById("check-msg");
-    let correct = document.getElementById("check-correct");
-    let wrong = document.getElementById("check-wrong");
-    let errorCount = document.getElementById("error-count");
     let checking = checkBoard();
 
-    newGame.style.display = "none";
-    solve.style.display = "none";
+    confirmNewGame.style.display = "none";
+    confirmSolve.style.display = "none";
     checkMsg.style.display = "flex";
 
     if (checking.result) {
@@ -319,14 +318,11 @@ check.addEventListener("click", () => {
     }
 });
 
-check.addEventListener("blur", () => {
-    let checkMsg = document.getElementById("check-msg");
-    let correct = document.getElementById("check-correct");
-    let wrong = document.getElementById("check-wrong");
-    checkMsg.style.display = "none";
-    correct.style.display = "none";
-    wrong.style.display = "none";
-});
+// check.addEventListener("blur", () => {
+//     checkMsg.style.display = "none";
+//     correct.style.display = "none";
+//     wrong.style.display = "none";
+// });
 
 // Solve button
 solve.addEventListener("click", () => {
